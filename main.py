@@ -51,6 +51,11 @@ def get_csv():
 
     return content, sha
 
+def get_database():
+    csv, sha = get_csv()
+    df = pd.read_csv(csv)
+    return df, sha
+
 
 def save_csv(content, sha):
     headers = {
